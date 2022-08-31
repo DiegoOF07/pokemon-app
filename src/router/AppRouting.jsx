@@ -9,8 +9,8 @@ export const AppRouting = () => {
         <Routes>
             <Route path="busca-pokemon" element={<Pokemon />}/>
             <Route path="todos-los-pokemon" element={<ListPokemon />}/>
-            <Route path="home" element={<Home/>}/>
-            <Route path="*" element={<Navigate to="home"/>}/>
+            <Route path="/" element={<Home/>}/>
+            <Route path="*" element={<Navigate to="/"/>}/>
         </Routes>
     </>
   )
