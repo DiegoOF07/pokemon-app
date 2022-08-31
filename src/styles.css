@@ -19,8 +19,9 @@
 }
 
 .logo{
-    display: block;
-    width: 15%;
+    display: flex;
+    justify-content: center;
+    width: 5%;
     min-width: 150px;
     margin: 0 25px;
     font-size: 1.7rem;
@@ -28,13 +29,14 @@
     color:#000;
 }
 
-.logo:hover{
-    font-size: 1.8rem;
+.logo img:hover{
+    width: 64px;
+    transform: rotate(-45deg);
 }
 
 .nav-content{
     display: flex;
-    width: 80%;
+    width: 95%;
     height: 100%;
     align-items: center;
 }
@@ -95,11 +97,11 @@
 }
 
 .container2{
-    width: 100%;
+    width: 40%;
     height: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction:row-reverse;
+    justify-content:center;
     flex-wrap: wrap;
     margin: 25px auto;
 }
@@ -114,12 +116,18 @@
     text-decoration: none;
     color: #000;
     font-size: 1.2rem;
+    border: none;
     border-radius: 5px;   
 }
 
 .btn:hover{
     background-color: #ffcb05;
     border-bottom: 5px solid #c7a008;
+}
+
+.btn:active{
+    background-color: #c9a100;
+    border-bottom: 5px solid #927606;  
 }
 
 .search-bar{
@@ -161,8 +169,8 @@
 .card-item{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    width: 30%;
+    justify-content: center;
+    width: 40%;
     height: 100%;
     align-items: center;
     border-radius: 30px;

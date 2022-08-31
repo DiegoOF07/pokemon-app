@@ -21,7 +21,7 @@ export const PokemonBienvenida = ({img, setImagen, imagenes}) => {
   return (
     <>
         {imgs?
-            <img src={imgs.sprites.front_default} className='portada resp'/>
+            <img src={imgs.sprites.front_default} alt={imgs.name}  className='portada resp'/>
             : <p>Cargando...</p>
         }
     </>

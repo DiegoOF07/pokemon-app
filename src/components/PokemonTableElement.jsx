@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const PokemonTableElement = ({ index, pokemon }) => {
+export const PokemonTableElement = ({ pokemon }) => {
 
     const [imgs, setImgs] = useState('');
 
@@ -19,12 +19,12 @@ export const PokemonTableElement = ({ index, pokemon }) => {
         <>
             {imgs ?
                 <tr className='card2'>
-                    <td className="container">ID: {index} </td>
+                    <td className="container">ID: {imgs.id} </td>
                     <td className="container">Nombre: {pokemon.name}</td>
                     <td><img src={imgs.sprites.front_default} /></td>
                 </tr>
                 : <tr className='card2'>
-                    <td className="container">{index}</td>
+                    <td className="container">cargando...</td>
                     <td className="container">{pokemon.name}</td>
                     <td>cargando...</td>
                 </tr>
