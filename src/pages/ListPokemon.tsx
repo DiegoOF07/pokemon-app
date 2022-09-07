@@ -1,9 +1,13 @@
+import React from "react";
 import { useEffect, useState } from "react"
 import { PokemonTableElement } from "../components/PokemonTableElement";
 import { getAllPokemons, getNextPokemons, getPreviousPokemons } from "../helpers/getPokemons"
+import { Pokemons } from "../models/pokemons.model";
 
 export const ListPokemon = () => {
-  const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState(
+    [new Pokemons('','')]
+  );
   const [next, setNext]=useState('');
   const [previous, setPrevious]=useState('');
 

@@ -1,21 +1,22 @@
+import React from "react";
 import { useEffect, useState } from "react";
+import { SingularPokemon } from "../models/singularPokemon.model";
 
 
 export const PokemonBienvenida = ({img, setImagen, imagenes}) => {
-    const [imgs, setImgs] = useState('');
+    const [imgs, setImgs] = useState(
+            new SingularPokemon('','',[],[],{front_default:''},0)
+        );
     
     const getImg = async () => {
         const response = await fetch(img.url);
         const image = await response.json();
-        // console.log(image);
         setImgs(image);
     }
 
     useEffect(()=>{
         getImg();
-        if(imgs!==''){
-            setImagen(...imagenes, imgs.sprites.front_default);
-        }
+        setImagen(...imagenes, imgs.sprites.front_default);
     },[])
 
   return (
