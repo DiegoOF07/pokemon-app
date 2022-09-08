@@ -1,14 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
-import { Slider } from "../components/Slider";
-import { getPokemons } from "../helpers/getPokemons"
+import { Slider } from "../components";
+import { GetPokemons } from "../helpers/GetPokemons"
 
 export const Home = () => {
   const [pokemons, setPokemons] = useState([]);
 
   const obtenerPokemons = async () => {
-    const poke = await getPokemons();
+    const poke = await GetPokemons();
     setPokemons(poke);
   }
 

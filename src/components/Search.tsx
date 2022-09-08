@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { getPokemonsByName } from "../helpers/getPokemons";
+import { GetPokemonsByName } from "../helpers/GetPokemons";
 
 
 export const Search = ({setPokemon, setError}) => {
@@ -11,7 +11,7 @@ export const Search = ({setPokemon, setError}) => {
 
     const obtenerPokemons=async()=>{
         try{
-        const poke= await getPokemonsByName(inputValue.trim().toLowerCase());
+        const poke= await GetPokemonsByName(inputValue.trim().toLowerCase());
         setPokemon(JSON.stringify(poke));
         setError('');
         }catch(err){

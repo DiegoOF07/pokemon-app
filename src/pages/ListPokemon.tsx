@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react"
-import { PokemonTableElement } from "../components/PokemonTableElement";
-import { getAllPokemons, getNextPokemons, getPreviousPokemons } from "../helpers/getPokemons"
+import { PokemonTableElement } from "../components";
+import { GetAllPokemons, GetNextPokemons, GetPreviousPokemons } from "../helpers/GetPokemons"
 import { Pokemons } from "../models/pokemons.model";
 
 export const ListPokemon = () => {
@@ -12,21 +12,21 @@ export const ListPokemon = () => {
   const [previous, setPrevious]=useState('');
 
     const getMyPokemons=async()=>{
-      const myPokemon = await getAllPokemons();
+      const myPokemon = await GetAllPokemons();
       setNext(myPokemon.next);
       setPrevious(myPokemon.previous);
       setPokemons(myPokemon.results);
     }
 
     const nextPage=async()=>{
-      const nextPokemon = await getNextPokemons(next);
+      const nextPokemon = await GetNextPokemons(next);
       setNext(nextPokemon.next);
       setPrevious(nextPokemon.previous);
       setPokemons(nextPokemon.results);
     }
 
     const previousPage=async () => {
-        const previousPokemon=await getPreviousPokemons(previous);
+        const previousPokemon=await GetPreviousPokemons(previous);
         setNext(previousPokemon.next);
         setPrevious(previousPokemon.previous);
         setPokemons(previousPokemon.results);
@@ -54,7 +54,7 @@ export const ListPokemon = () => {
       <table >
         <tbody className="container">
           {pokemons.map((pokemon)=>(
-            <PokemonTableElement key={pokemon.name} pokemon={pokemon}/>
+            <PokemonTableElement key={pokemon.name} pokemon={pokemon} />
           ))}
         </tbody>
       </table>

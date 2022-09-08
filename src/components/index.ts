@@ -1,0 +1,6 @@
+export * from './Navbar'
+export * from './PokemonBienvenida'
+export * from './PokemonCard'
+export * from './PokemonTableElement'
+export * from './Search'
+export * from './Slider'

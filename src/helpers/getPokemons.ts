@@ -1,4 +1,4 @@
-export const getPokemons = async() =>{
+export const GetPokemons = async() =>{
     const max= 1140;
     const min=0;
     let number=Math.floor((Math.random() * (max - min + 1)) + min);
@@ -8,26 +8,26 @@ export const getPokemons = async() =>{
     return results;
 };
 
-export const getAllPokemons = async() =>{
+export const GetAllPokemons = async() =>{
     const url=`https://pokeapi.co/api/v2/pokemon?limit=28`;
     const response= await fetch(url);
     const results= await response.json();
     return results;
 };
 
-export const getNextPokemons =async(url) =>{
+export const GetNextPokemons =async(url) =>{
     const response= await fetch(url);
     const results= await response.json();
     return results;
 }
 
-export const getPreviousPokemons =async(url) =>{
+export const GetPreviousPokemons =async(url) =>{
     const response= await fetch(url);
     const results= await response.json();
     return results;
 }
 
-export const getPokemonsByName = async(name) =>{
+export const GetPokemonsByName = async(name) =>{
     const url=`https://pokeapi.co/api/v2/pokemon/${name}`;
     const response=await fetch(url);
     const result= await response.json();

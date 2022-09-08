@@ -1,6 +1,6 @@
 import React from "react"
 
-export const PokemonCard = ({ pokemon }) => {
+export function PokemonCard ({ pokemon }) {
     return (
         <>
             <div className='container'>
