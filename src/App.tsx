@@ -1,13 +1,14 @@
-import React from 'react'
-import { AppRouting } from './router/AppRouting'
+import React from 'react';
+
+import { AppRouting } from './router/AppRouting';
 
 function App() {
-
+  
   return (
-   <>
-    <AppRouting/>
-   </>
-  )
+    <>
+      <AppRouting />
+    </>
+  );
 }
 
-export default App
+export default App;
