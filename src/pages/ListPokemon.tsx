@@ -12,6 +12,7 @@ export const ListPokemon = () => {
   const [pokemons, setPokemons] = useState([new Pokemons("", "")]);
   const [next, setNext] = useState("");
   const [previous, setPrevious] = useState("");
+  const [validation, setValidation] = useState(false);
 
   const getMyPokemons = async () => {
     const myPokemon = await getAllPokemons();
@@ -71,10 +72,31 @@ export const ListPokemon = () => {
           {pokemons.map((pokemon) => (
             <PokemonTableElement 
               key = {pokemon.name} 
-              pokemon = {pokemon} />
+              pokemon = {pokemon}
+              setValidation={setValidation}
+              validation={validation} />
           ))}
         </tbody>
       </table>
+
+      <div className = "container2">
+        {next 
+        ? (
+          <button 
+            onClick = {nextPage} 
+            className = "btn">
+              siguiente
+          </button>
+        ) : null}
+        {previous 
+        ? (
+          <button 
+            onClick = {previousPage} 
+            className = "btn">
+              anterior
+          </button>
+        ) : null}
+      </div>
     </>
   );
 };

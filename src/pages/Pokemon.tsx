@@ -6,6 +6,7 @@ import { Search, PokemonCard } from '../components';
 export const Pokemon = () => {
   const [pokemon, setPokemon] = useState('');
   const [error, setError] = useState('');
+  
 
   return (
     <>
